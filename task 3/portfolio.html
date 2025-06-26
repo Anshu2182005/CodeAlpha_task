@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <link rel="shortcut icon" href="/portfolio/img/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons (optional, for skills/contact) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header and Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="#home" class="logo">MyPortfolio</a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li> <!-- New nav link -->
+                    <li><a href="#resume" class="nav-link">Resume</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero section fade-in">
+            <div class="container">
+                <div class="hero-content">
+                    <!-- Added specific classes for individual animation timing -->
+                    <p class="intro-text animate-text-1">Hello, I'm</p>
+                    <h1 class="animate-text-2">Anshumaan Sahu</h1>
+                    <p class="tagline animate-text-3">A Passionate Front-End Developer & Designer</p>
+                    <a href="#projects" class="btn primary-btn animate-btn-1">View My Work</a>
+                    <a href="#contact" class="btn secondary-btn animate-btn-2">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section about-section fade-in">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <img src="/portfolio/img/about.jpg" alt="Anshumaan Sahu Profile Picture" class="profile-img">
+                    <div class="about-text">
+                        <p>Hi there! I'm Anshumaan Sahu, a dedicated front-end developer with a keen eye for detail and
+                            a passion for creating beautiful, functional, and user-friendly digital experiences. I
+                            specialize in front-end development, bringing designs to life using modern web technologies.
+                        </p>
+                        <p>My journey in fronnt-end development began with a fascination for how websites work, leading
+                            me to master HTML, CSS, and JavaScript. I love solving complex problems and continuously
+                            learning new frameworks and tools to improve my craft. When I'm not coding, you can find me
+                            exploring new design trends, reading tech blogs, or enjoying a good cup of coffee.</p>
+                        <p>I am always open to new challenges and collaborations. Let's build something amazing
+                            together!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section bg-light fade-in">
+            <div class="container">
+                <h2>My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML5</h3>
+                        <p>Semantic structuring and accessibility.</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                        <p>Responsive design, animations, and modern layouts.</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                        <p>Interactive web applications and dynamic content.</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-react"></i>
+                        <h3>React</h3>
+                        <p>Building scalable and component-based UIs.</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-node-js"></i>
+                        <h3>Node.js</h3>
+                        <p>Backend development with Express.js.</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <h3>Databases</h3>
+                        <p>SQL (PostgreSQL, MySQL) & NoSQL (MongoDB).</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-git-alt"></i>
+                        <h3>Git & GitHub</h3>
+                        <p>Version control and collaborative development.</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-palette"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>User-centered design principles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section fade-in">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="https://placehold.co/400x250/333333/FFFFFF?text=Basic+Calculator" alt="Project 1">
+                        <h3>Live Calculator</h3>
+                        <p>A standard calculator which can do all basic arithmetic operations.</p>
+                        <div class="project-links">
+                            <a href="/task 2/Calculator.html" class="btn project-btn" target="_blank"><i
+                                    class="fas fa-link"></i> Live Demo</a>
+                            <a href="#" class="btn project-btn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/400x250/333333/FFFFFF?text=Image+Gallery" alt="Project 2">
+                        <h3>Image Gallery</h3>
+                        <p>A responsive image gallery with images of nature, city, and some abstracts and a pop-up
+                            lightbox for detailed views.</p>
+                        <div class="project-links">
+                            <a href="/task 1/Image Gallery.html" class="btn project-btn" target="_blank"><i
+                                    class="fas fa-link"></i> Live Demo</a>
+                            <a href="#" class="btn project-btn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/400x250/333333/FFFFFF?text=Portfolio+Site" alt="Project 3">
+                        <h3>Portfolio Website</h3>
+                        <p>A minimalist and modern personal portfolio site, designed to showcase projects and skills.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="btn project-btn" target="_blank"><i class="fas fa-link"></i> Live
+                                Demo</a>
+                            <a href="#" class="btn project-btn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/400x250/333333/FFFFFF?text=AI+Assistant" alt="Project 4">
+                        <h3>AI Text Assistant</h3>
+                        <p>A simple web-based AI assistant powered by Gemini for generating text responses.</p>
+                        <div class="project-links">
+                            <a href="/ai_assistant.html" class="btn project-btn" target="_blank"><i
+                                    class="fas fa-link"></i> Live Demo</a>
+                            <a href="#" class="btn project-btn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New: Photo Gallery Section -->
+        <section id="gallery" class="section gallery-section bg-light fade-in">
+            <div class="container">
+                <h2>Photo Gallery</h2>
+                <p class="section-description">A collection of moments and creations.</p>
+                <div class="gallery-grid">
+                    <!-- Example images for the new gallery section -->
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/gallery1/400/300" alt="Gallery Image 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/gallery2/400/300" alt="Gallery Image 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/gallery3/400/300" alt="Gallery Image 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/gallery4/400/300" alt="Gallery Image 4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/gallery5/400/300" alt="Gallery Image 5">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/gallery6/400/300" alt="Gallery Image 6">
+                    </div>
+                </div>
+                <a href="/gallery.html" class="btn primary-btn mt-8 animate-btn-1">View Full Gallery</a>
+            </div>
+        </section>
+
+
+        <!-- Resume Section -->
+        <section id="resume" class="section resume-section fade-in">
+            <div class="container text-center">
+                <h2>My Resume</h2>
+                <p>A brief overview of my professional experience, education, and achievements.</p>
+                <a href="https://example.com/your-resume.pdf" target="_blank" class="btn primary-btn"><i
+                        class="fas fa-download"></i> Download Resume (PDF)</a>
+                <p class="note"><em>(Replace with your actual resume link)</em></p>
+            </div>
+        </section>
+hj
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section bg-light fade-in">
+            <div class="container text-center">
+                <h2>Get In Touch</h2>
+                <p>Have a question or want to work together? Feel free to reach out!</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:anshusahu2182005@gmail.com"
+                            target="_blank">anshusahu2182005@gmail.com</a></p>
+                    <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/anshumaan218"
+                            target="_blank">linkedin.com/in/anshumaan218</a></p>
+                    <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/Anshu2182005"
+                            target="_blank">github.com/Anshu2182005</a></p>
+                </div>
+                <!-- Optional: A simple contact form structure -->
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn primary-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Anshumaan Sahu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+
+</html>

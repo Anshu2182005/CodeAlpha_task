@@ -1,0 +1,337 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.gallery-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px; /* Increased max-width for better display on large screens */
+}
+
+h1 {
+    text-align: left;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+/* Filter Controls */
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 10px;
+    margin-bottom: 25px; /* Space between filters and image grid */
+}
+
+.filter-btn {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #d0d0d0;
+}
+
+.filter-btn.active {
+    background-color: #555;
+    color: white;
+    font-weight: bold;
+}
+
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Increased min-width for medium size */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.img-thumbnail {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    background-color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 0.8em;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, opacity 0.3s ease; /* Added opacity transition */
+}
+
+.img-thumbnail.hidden {
+    display: none; /* Hide images not matching filter */
+}
+
+.img-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.img-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Gallery Navigation */
+.gallery-navigation {
+    display: flex;
+    justify-content: center;
+    background-color: #777;
+    border-radius: 25px;
+    padding: 8px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.gallery-navigation button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 1.1em;
+    font-style: italic;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-navigation button.active {
+    background-color: #555;
+    font-weight: bold;
+}
+
+.gallery-navigation button:hover:not(.active) {
+    background-color: #666;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-sizing: border-box;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px; /* Adjusted max-width for larger lightbox image */
+    max-height: 80vh;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little see-through effect */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Image options within the lightbox */
+.image-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.edit-box, .filter-option {
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.edit-box:hover, .filter-option:hover {
+    background-color: #777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Adjust for slightly smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .filter-controls {
+        gap: 8px;
+    }
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Adjust for tablets */
+        gap: 15px;
+    }
+
+    .gallery-navigation button {
+        padding: 8px 20px;
+        font-size: 1em;
+    }
+
+    .lightbox-content {
+        width: 90%;
+        max-width: 600px;
+    }
+
+    .prev, .next {
+        font-size: 16px;
+        padding: 10px;
+        margin-top: -30px;
+    }
+
+    .close-btn {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
+    }
+
+    .image-options {
+        flex-direction: column;
+        bottom: 10px;
+        gap: 10px;
+    }
+    .edit-box, .filter-option {
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+    .filter-controls {
+        flex-direction: column; /* Stack filters vertically */
+        align-items: center;
+        gap: 8px;
+    }
+    .filter-btn {
+        width: 80%; /* Make filter buttons wider */
+        max-width: 200px;
+    }
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust for mobile phones */
+        gap: 10px;
+    }
+    .gallery-navigation {
+        width: 90%; /* Make nav buttons span wider */
+        padding: 6px;
+    }
+    .gallery-navigation button {
+        padding: 6px 15px;
+        font-size: 0.9em;
+    }
+    .lightbox-content {
+        max-width: 95%;
+        padding-top: 50px;
+    }
+    .prev, .next {
+        font-size: 14px;
+        padding: 8px;
+        margin-top: -20px;
+    }
+    .close-btn {
+        font-size: 25px;
+        top: 5px;
+        right: 15px;
+    }
+    .image-options {
+        bottom: 5px;
+        gap: 5px;
+    }
+}

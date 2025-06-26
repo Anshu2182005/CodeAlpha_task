@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="Image Gallery.css">
+</head>
+
+<body>
+
+    <div class="gallery-container">
+        <h1>Images</h1>
+
+        <div class="filter-controls">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="nature">Nature</button>
+            <button class="filter-btn" data-category="city">City</button>
+            <button class="filter-btn" data-category="abstract">Abstract</button>
+        </div>
+
+        <div class="image-grid" id="imageGrid"></div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="lightboxImage" src="" alt="Gallery Image">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <script src="Image Gallery.js"></script>
+</body>
+
+</html>
